@@ -30,5 +30,9 @@ public int getId(){
 }
 
 //Skriv toStringe Metode!
+public String toString(){
+return "name: " + name + "\nAge: " + age + "\nID:" + id + "\nIs active: " + active + "\nPrice: " + price + "\nDebt: " + debt;
+}
+
 
 }
