@@ -8,14 +8,27 @@ double price;
 double debt;
 
 
+
+public Member(String name, int age, int id, boolean active){
+   this.name = name;
+   this.age = age;
+   this.id = id;
+   this.active = active;
+}
+
+
 double calculatePrice(){
 
 return 1;
 }
 
+
+
 public int getId(){
 
    return id;
 }
+
+//Skriv toStringe Metode!
 
 }

@@ -22,13 +22,16 @@ public class Database{
    
    void removeData(int id){
       for (int i = 0; i < data.size(); i++){
-         if (data(i) instanceof Member){
-            if ((Member) data(i).getId() == id){
+         if (data.get(i) instanceof Member){
+            if (((Member) (data.get(i))).getId() == id){
                data.remove(i);
             }
          }
       }
          
    }
+   
+   
+   
 
 }

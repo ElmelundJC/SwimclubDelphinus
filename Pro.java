@@ -1,4 +1,4 @@
-public class Pro extends Member{
+public class Pro{
 
 double time;
 String discipline;
