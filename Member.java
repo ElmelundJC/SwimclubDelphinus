@@ -13,4 +13,9 @@ double calculatePrice(){
 return 1;
 }
 
+public int getId(){
+
+   return id;
+}
+
 }
