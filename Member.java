@@ -10,7 +10,7 @@ double debt;
 
 double calculatePrice(){
 
-return 0;
+return 1;
 }
 
 }
