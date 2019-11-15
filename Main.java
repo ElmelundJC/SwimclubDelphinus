@@ -1,19 +1,33 @@
-public class Main {
+import java.io.*;
+
+public class Main  {
 
 
-public static void main(String[] args){
+    public static void main(String[] args) throws IOException { // husk try/catch
 
+    
 
+    Database database = new Database();
+    
+    database.reader();
+     
 
-Database Medlemmer = new Database();
-
+    for (int i = 0; i < database.getArrayList().size(); i++) {
+        System.out.println(database.getArrayList().get(i).toString());
+    }
+    
+   
 
 // String name, int age, int id, boolean active
-Amateur Jakob = new Amateur("Jakob", 25, 01, true);
+//Amateur Jakob = new Amateur("Jakob", 25, 01, true);
 
-Medlemmer.createData(Jakob);
-System.out.println(Jakob.toString());
+//Medlemmer.addAmateur("Christian", 45, 3, true);
+
+
+//Medlemmer.createData(Jakob);
+//System.out.println(Jakob.toString());
    
+//Medlemmer.write(Medlemmer.getArrayList());
 
 
 }

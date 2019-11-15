@@ -1,0 +1,3 @@
+class Amateur Christian 45 3 true 0.0
+class Amateur Jakob 25 1 true 0.0
+class Pro Jesper 32 2 true 0.0 11.3 butfly Jacob

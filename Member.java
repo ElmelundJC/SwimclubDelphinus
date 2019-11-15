@@ -9,7 +9,7 @@ double debt;
 
 
 
-public Member(String name, int age, int id, boolean active){
+public Member(String name, int age, int id, boolean active){ // fjern id og opret id-funktion
    this.name = name;
    this.age = age;
    this.id = id;
@@ -29,9 +29,9 @@ public int getId(){
    return id;
 }
 
-//Skriv toStringe Metode!
+//Skriv toString Metode!
 public String toString(){
-return "name: " + name + "\nAge: " + age + "\nID:" + id + "\nIs active: " + active + "\nPrice: " + price + "\nDebt: " + debt;
+return this.getClass() + " " + name + " " + age + " " + id + " " + active + " "  + debt;
 }
 
 
