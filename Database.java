@@ -42,23 +42,45 @@ public class Database{
    }
     public void reader() throws IOException {   // Skrives pænt!!
         Scanner scanner = new Scanner(new FileReader("database.txt"));
+        scanner.useLocale(Locale.ENGLISH);
         while (scanner.hasNextLine()) {
              String line = scanner.nextLine();
              System.out.println(line);
              Scanner scan = new Scanner(line);
+             scan.useLocale(Locale.ENGLISH);
              System.out.println("1st");
         while (scan.hasNext()) { 
          System.out.println("2nd");  
-         System.out.println(scan.next()); 
-            if (scan.hasNext() && scan.next() == "Pro") {
-              
-            addPro(scan.next(), (int) scan.nextInt(), (int) scan.nextInt(), (boolean) scan.nextBoolean(), (double) scan.nextDouble(), scan.next(), scan.next());    
+         String temp = scan.next(); 
+         
+            if (temp.equals("Pro")) {
+            System.out.println(temp);  
+            String temp2 = scan.next();
+            int temp3 = scan.nextInt();
+            int temp4 = scan.nextInt();
+            boolean temp5 = scan.nextBoolean();
+            double temp9 = scan.nextDouble();
+            double temp6 = scan.nextDouble();
+            String temp7 = scan.next();
+            String temp8 = scan.next();
+            
+            addPro(temp2, temp3, temp4, temp5, temp9, temp6, temp7, temp8);
+            
+            //addPro(scan.next(), scan.nextInt(), scan.nextInt(), scan.nextBoolean(), scan.nextDouble(), scan.nextDouble(), scan.next(), scan.next());    
             System.out.println("Pro");
             }
 
             
-            if (scan.hasNext() && scan.next() == "Amateur") {
-                addAmateur(scan.next(), (int) scan.nextInt(), (int) scan.nextInt(), (boolean) scan.nextBoolean());   
+            if (temp.equals("Amateur")) {
+                 String temp2 = scan.next();
+                 int temp3 = scan.nextInt();
+                 int temp4 = scan.nextInt();
+                 boolean temp5 = scan.nextBoolean();
+                 double temp9 = scan.nextDouble();
+                 
+                 addAmateur(temp2, temp3, temp4, temp5, temp9);
+
+                //addAmateur(scan.next(), (int) scan.nextInt(), (int) scan.nextInt(), (boolean) scan.nextBoolean(), (double) scan.nextDouble());   
                 System.out.println("Amateur"); 
             }
             
@@ -68,13 +90,13 @@ public class Database{
    
    scanner.close();
    }
-   public void addAmateur(String name, int age, int id, boolean active) {
-       Amateur amateur = new Amateur(name, age, id, active); 
+   public void addAmateur(String name, int age, int id, boolean active, double debt) {
+       Amateur amateur = new Amateur(name, age, id, active, debt); 
            createData(amateur);      
    }
    // String name, int age, int id, boolean active, double time, String discipline, String coach
-   public void addPro(String name, int age, int id, boolean active, double time, String discipline, String coach) {
-       Pro pro = new Pro(name, age, id, active, time, discipline, coach);
+   public void addPro(String name, int age, int id, boolean active, double debt, double time, String discipline, String coach) {
+       Pro pro = new Pro(name, age, id, active, debt, time, discipline, coach);
            createData(pro);
    } 
 }

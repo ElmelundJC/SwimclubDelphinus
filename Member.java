@@ -9,11 +9,12 @@ double debt;
 
 
 
-public Member(String name, int age, int id, boolean active){ // fjern id og opret id-funktion
+public Member(String name, int age, int id, boolean active, double debt){ // fjern id og opret id-funktion
    this.name = name;
    this.age = age;
    this.id = id;
    this.active = active;
+   this.debt = debt;
 }
 
 
