@@ -1,21 +1,21 @@
 public class Trainer{
 
-String team;
+   String team;
 
 
-double getTime(){
+   double getTime(){
+   
+      return 0;
+   }
 
-return 0;
-}
+   void setTime(){
+   }
 
-void setTime(){
-}
-
-String swimList(){
-
-
-return "test";
-}
+   String swimList(){
+   
+   
+      return "test";
+   }
 
 
 }

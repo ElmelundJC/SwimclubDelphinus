@@ -1,9 +1,9 @@
 public class Treasurer{
 
 
-double getDebt(){
-
-return 0;
-}
+   double getDebt(){
+   
+      return 0;
+   }
 
 }

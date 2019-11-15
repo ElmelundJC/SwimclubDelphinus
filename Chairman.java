@@ -1,12 +1,12 @@
 public class Chairman extends Treasurer{
 
 
-void Create(){
+   void Create(){
+   
+   }
 
-}
-
-void Delete(){
-
-}
+   void Delete(){
+   
+   }
 
 }
