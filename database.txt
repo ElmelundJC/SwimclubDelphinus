@@ -1,2 +1,0 @@
-class Amateur kidde 24 3 true 11.2
-class Pro else 44 5 true 0.0 13.2 butterfly klaus
