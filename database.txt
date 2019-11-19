@@ -1,0 +1,2 @@
+class Pro erik 28 211 true 0.0 13.7 butterfly Klaus
+class Amateur Kristian 23 337 true 0.0

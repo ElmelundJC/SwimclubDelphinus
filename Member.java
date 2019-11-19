@@ -34,6 +34,12 @@ abstract class Member{
    public String toString(){
       return this.getClass() + " " + name + " " + age + " " + id + " " + active + " "  + debt;
    }
+   
+   public String toList(){
+   
+   return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt;
+   
+   }
 
 
 }
