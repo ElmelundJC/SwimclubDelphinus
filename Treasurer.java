@@ -2,13 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Treasurer implements User {
-
-   
-   double getDebt(){
-   
-      return 0;
-      
-   }
    
     Database data = new Database();
     
@@ -32,6 +25,8 @@ public class Treasurer implements User {
          
             case"2":
                System.out.println("See debt");
+               
+               //brug searchTimes template til at lave en debt search
                break;
          
             case"3":

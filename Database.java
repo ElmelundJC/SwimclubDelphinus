@@ -169,7 +169,6 @@ public class Database{
       
          Collections.sort(times, 
             new Comparator<Pro>() {
-               @Override 
                public int compare(Pro p1, Pro p2) {
                   double dif = p1.getTime() - p2.getTime();
                   if (dif > 0) 
