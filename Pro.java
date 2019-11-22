@@ -17,7 +17,7 @@ public class Pro extends Member {
    
    public String toList(){
    
-   return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt + "\tTime: " + time + "\tDiscipline: " + discipline + "\tCoach: " + coach;
+   return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt + "\tTime: " + time + "\tDiscipline: " + discipline + "\tCoach: " + coach +"\tMemberPrice: " +price +" Dkk";
    
    }
 

@@ -18,21 +18,24 @@ abstract class Member{
       this.debt = debt;
       this.price = calculatePrice();
    
-
-
-   double calculatePrice(){
-   
-      //if !active do - 500kr...
-      
-      //else if (this.age) 18+ - do
-      //return initialPrice;
-      
-      //else if 18- - do
-      
-      //else if 65+ - do
    }
 
-
+   double calculatePrice(){
+      double standardPrice = 1600;
+      if (this.active&&this.age < 18){
+         return 1000;
+      }
+      if (this.active && (this.age >= 18 && this.age <60)){
+         return standardPrice;
+      }
+      if (this.active&&this.age>=60)
+      {
+         return standardPrice*0.75;}
+      
+      
+      return 500;
+   }
+  
 
    public int getId(){
    
@@ -46,7 +49,7 @@ abstract class Member{
    
    public String toList(){
    
-   return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt;
+      return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt +"\tMemberPrice: " +price +" Dkk";
    
    }
 
