@@ -7,6 +7,7 @@ abstract class Member{
    double price;
    double debt;
    float initialPrice = 1000;
+   //gittest
 
 
 
