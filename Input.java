@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class Input{
+public class Input implements User{
 
    Database data = new Database();
 
@@ -88,7 +88,9 @@ public class Input{
    }
    
    
-
+   public void caseTwo(){}
+   public void caseThree(){}
+   public void caseFour(){}
 
 
 }

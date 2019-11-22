@@ -21,16 +21,24 @@ public class Treasurer implements User {
             case "1":
                System.out.println("See member");
                data.printer(data.getArrayList());
+               
+               // caseOne();
                break;
          
             case"2":
                System.out.println("See debt");
-               
+               // caseTwo();
                //brug searchTimes template til at lave en debt search
                break;
          
             case"3":
+               // caseThree();
                System.out.println("Erase member");
+               break;
+               
+               case "4" :
+               System.out.println("Edit Debt");
+               // caseFour();
                break;
          
                     
@@ -42,4 +50,9 @@ public class Treasurer implements User {
          }
       }
    }
+   
+   public void caseOne(){}
+   public void caseTwo(){}
+   public void caseThree(){}
+   public void caseFour(){}
 }
