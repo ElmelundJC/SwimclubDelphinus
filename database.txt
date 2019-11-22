@@ -8,3 +8,4 @@ class Pro Homer 28 211 true 0.0 132.0 butterfly Klaus
 class Pro Bart 28 211 true 0.0 1392.2 butterfly Klaus
 class Pro Peter 28 211 true 0.0 1823.3 butterfly Klaus
 class Pro Meg 28 211 true 0.0 1.1 butterfly Klaus
+class Pro Lis 28 211 true 0.0 132.0 butterfly Klaus
