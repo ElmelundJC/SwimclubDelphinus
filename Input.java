@@ -24,6 +24,7 @@ public class Input implements User{
          
             case"2":
                System.out.println("Delete user");
+               caseTwo();
                break;
          
             case"3":
@@ -53,7 +54,7 @@ public class Input implements User{
    
    }
    
-   public void caseOne(){
+   public void caseOne(){ //adds member
    System.out.println("1 - Add Pro\n2 - Add Amateur\n3 - Return");
    Random r = new Random();
       while (true) {
@@ -73,6 +74,7 @@ public class Input implements User{
                break;
          
             case "3":
+            
                run();
                break;
          

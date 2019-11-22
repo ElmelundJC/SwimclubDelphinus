@@ -58,4 +58,8 @@ public class Trainer implements User {
          }
      }
    }
+   public void caseOne(){}
+   public void caseTwo(){}
+   public void caseThree(){}
+   public void caseFour(){}
 }
