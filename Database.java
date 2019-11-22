@@ -53,7 +53,7 @@ public class Database{
          scanner.useLocale(Locale.ENGLISH);
          while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            System.out.println(line);
+            //System.out.println(line);
             Scanner scan = new Scanner(line);
             scan.useLocale(Locale.ENGLISH);
             
@@ -180,12 +180,9 @@ public class Database{
             });
       
       }
-      
-      if(times.size() < amount){
-      
+      if (times.size() < amount) {
       amount = times.size();
       }
-      
       for (int i = 0; i < amount; i++){
       
          System.out.println(times.get(i).toList());
