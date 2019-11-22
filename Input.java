@@ -14,7 +14,7 @@ public class Input{
    public void run(){
       
       while (true){
-         System.out.println("Welcome!: Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
+         System.out.println("Welcome!\n Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
       
          switch(sc.next()){
             case "1":

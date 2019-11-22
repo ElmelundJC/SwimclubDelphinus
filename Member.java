@@ -6,6 +6,7 @@ abstract class Member{
    boolean active;
    double price;
    double debt;
+   float initialPrice = 1000;
 
 
 
@@ -15,12 +16,20 @@ abstract class Member{
       this.id = id;
       this.active = active;
       this.debt = debt;
-   }
+      this.price = calculatePrice();
+   
 
 
    double calculatePrice(){
    
-      return 1;
+      //if !active do - 500kr...
+      
+      //else if (this.age) 18+ - do
+      //return initialPrice;
+      
+      //else if 18- - do
+      
+      //else if 65+ - do
    }
 
 
