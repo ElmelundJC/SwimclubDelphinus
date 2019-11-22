@@ -181,6 +181,11 @@ public class Database{
       
       }
       
+      if(times.size() < amount){
+      
+      amount = times.size();
+      }
+      
       for (int i = 0; i < amount; i++){
       
          System.out.println(times.get(i).toList());
