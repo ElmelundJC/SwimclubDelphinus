@@ -1,4 +1,4 @@
-public class Chairman extends Treasurer{
+public class Chairman extends Input{
 
 
    void Create(){
