@@ -18,7 +18,7 @@ abstract class Member{
       this.debt = debt;
       this.price = calculatePrice();
    
-
+}
 
    double calculatePrice(){
    
@@ -28,7 +28,7 @@ abstract class Member{
       //return initialPrice;
       
       //else if 18- - do
-      
+      return 0;
       //else if 65+ - do
    }
 
