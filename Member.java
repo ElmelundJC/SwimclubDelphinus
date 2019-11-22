@@ -22,18 +22,20 @@ abstract class Member{
 
    double calculatePrice(){
       double standardPrice = 1600;
-      if (this.active&&this.age < 18){
+      if (!this.active){
+      return 500;
+      }
+      else if (this.age < 18){
          return 1000;
       }
-      if (this.active && (this.age >= 18 && this.age <60)){
+      else if ((this.age >= 18 && this.age <60)){
          return standardPrice;
       }
-      if (this.active&&this.age>=60)
+      else 
       {
          return standardPrice*0.75;}
       
       
-      return 500;
    
 }
   
