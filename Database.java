@@ -27,21 +27,21 @@ public class Database{
    }
    
    public void write(ArrayList list) {
-   try {
-      PrintWriter pwriter = new PrintWriter(new FileWriter("database.txt")); // husk at lave try/catch
-      for (Object i : list) {
-         pwriter.println(i.toString());
+      try {
+         PrintWriter pwriter = new PrintWriter(new FileWriter("database.txt")); // husk at lave try/catch
+         for (Object i : list) {
+            pwriter.println(i.toString());
                 
-      }
-      pwriter.close();
+         }
+         pwriter.close();
       }
       catch (IOException e) {
-      System.out.println("Error: " + e);
+         System.out.println("Error: " + e);
       }
    }
    
    public void printer(ArrayList list) {
-         for (Object i : list) {
+      for (Object i : list) {
          System.out.println(((Member) i).toList()); //evt instanceoff
                 
       }
@@ -151,6 +151,44 @@ public class Database{
       temp = sc1.nextDouble();
    
       return temp;
+   }
+   
+   public void searchTimes(String disc, int amount){
+   
+      ArrayList<Pro> times = new ArrayList<Pro>();
+   
+      for (int i = 0; i < data.size(); i++){
+      
+         if (data.get(i) instanceof Pro){
+            if (((Pro) data.get(i)).getDiscipline().equals(disc)){
+            
+               times.add((Pro) data.get(i));
+            
+            }
+         }
+      
+         Collections.sort(times, 
+            new Comparator<Pro>() {
+               @Override 
+               public int compare(Pro p1, Pro p2) {
+                  double dif = p1.getTime() - p2.getTime();
+                  if (dif > 0) 
+                     return 1;
+                  if (dif < 0) 
+                     return -1;
+                  return 0; 
+               }
+            });
+      
+      }
+      
+      for (int i = 0; i < amount; i++){
+      
+         System.out.println(times.get(i).toList());
+      
+      }      
+       
+   
    }
    
    

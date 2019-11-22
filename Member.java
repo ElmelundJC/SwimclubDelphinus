@@ -34,7 +34,10 @@ abstract class Member{
       
       
       return 500;
-   }
+   
+}
+
+
   
 
    public int getId(){
