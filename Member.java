@@ -16,12 +16,13 @@ abstract class Member{
       this.id = id;
       this.active = active;
       this.debt = debt;
-      this.price = calculatePrice();
+
    
 }
 
    double calculatePrice(){
    
+
       //if !active do - 500kr...
       
       //else if (this.age) 18+ - do
@@ -30,6 +31,7 @@ abstract class Member{
       //else if 18- - do
       return 0;
       //else if 65+ - do
+
    }
 
 

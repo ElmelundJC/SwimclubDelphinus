@@ -28,7 +28,9 @@ public class Input{
          
             case"3":
                System.out.println("See members");
-               data.printer(data.getArrayList());
+               //data.printer(data.getArrayList());
+               
+               data.searchTimes("butterfly", 5);
                break;
          
             case"4":

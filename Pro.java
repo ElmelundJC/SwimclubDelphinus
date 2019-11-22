@@ -20,6 +20,15 @@ public class Pro extends Member {
    return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt + "\tTime: " + time + "\tDiscipline: " + discipline + "\tCoach: " + coach;
    
    }
+   
+   public String getDiscipline(){
+   
+   return this.discipline;
+   }
+   
+   public double getTime(){
+   return this.time;
+   }
 
 
 }
