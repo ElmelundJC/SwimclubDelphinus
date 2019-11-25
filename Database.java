@@ -5,6 +5,8 @@ public class Database{
 
    ArrayList<Object> data = new ArrayList<Object>();
    
+   String[] discipline = {"butterfly", "crawl", "freestyle", "medley", "backstroke"};
+   
    ArrayList getArrayList(){
       
       return data;
@@ -12,6 +14,20 @@ public class Database{
    
    void createData(Object obj){
       data.add(obj);
+   }
+   
+   public String getDataDiscipline(){
+   
+      String temp = "";
+   
+      for (int i = 0; i < discipline.length; i++){
+      
+         temp += i +": " + discipline[i] + " ";
+      
+      }
+   
+      return temp;
+   
    }
    
    
@@ -153,42 +169,67 @@ public class Database{
       return temp;
    }
    
-   public void searchTimes(String disc, int amount){
+   public void searchTimes(int amount){
    
-      ArrayList<Pro> times = new ArrayList<Pro>();
-   
-      for (int i = 0; i < data.size(); i++){
+      Scanner sc = new Scanner(System.in);
       
-         if (data.get(i) instanceof Pro){
-            if (((Pro) data.get(i)).getDiscipline().equals(disc)){
-            
-               times.add((Pro) data.get(i));
-            
+      String disc;
+      
+      int j;
+   
+      System.out.println(getDataDiscipline());
+      
+      j = sc.nextInt();
+      
+      if (j > discipline.length){
+         System.out.println("Value not correct, Try Again!");
+
+         searchTimes(amount);
+      
+      } else {
+
+      
+         disc = discipline[j];
+      
+         ArrayList<Pro> times = new ArrayList<Pro>();
+      
+         for (int i = 0; i < data.size(); i++){
+         
+            if (data.get(i) instanceof Pro){
+               if (((Pro) data.get(i)).getDiscipline().equals(disc)){
+               
+                  times.add((Pro) data.get(i));
+               
+               }
             }
+         
+            Collections.sort(times, 
+               new Comparator<Pro>() {
+                  public int compare(Pro p1, Pro p2) {
+                     double dif = p1.getTime() - p2.getTime();
+                     if (dif > 0) 
+                        return 1;
+                     if (dif < 0) 
+                        return -1;
+                     return 0; 
+                  }
+               });
+         
+         }
+         if (times.size() < amount) {
+            amount = times.size();
+         }
+         for (int i = 0; i < amount; i++){
+         
+            System.out.println(times.get(i).toList());
+         
          }
       
-         Collections.sort(times, 
-            new Comparator<Pro>() {
-               public int compare(Pro p1, Pro p2) {
-                  double dif = p1.getTime() - p2.getTime();
-                  if (dif > 0) 
-                     return 1;
-                  if (dif < 0) 
-                     return -1;
-                  return 0; 
-               }
-            });
-      
+         if (times.size() == 0){
+            System.out.println("No one with that discipline");
+         
+         }    
       }
-      if (times.size() < amount) {
-      amount = times.size();
-      }
-      for (int i = 0; i < amount; i++){
-      
-         System.out.println(times.get(i).toList());
-      
-      }      
-       
    
    }
    
