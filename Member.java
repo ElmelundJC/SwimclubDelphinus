@@ -24,7 +24,7 @@ abstract class Member{
    double calculatePrice(){
       double standardPrice = 1600;
       if (!this.active){
-         return 500;
+      return 500;
       }
       else if (this.age < 18){
          return 1000;
@@ -38,17 +38,12 @@ abstract class Member{
       
       
    
-   }
+}
   
 
    public int getId(){
    
       return id;
-   }
-   
-   public double getDebt(){
-   
-      return debt;
    }
 
 //Skriv toString Metode!

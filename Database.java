@@ -181,7 +181,7 @@ public class Database{
       
       }
       if (times.size() < amount) {
-         amount = times.size();
+      amount = times.size();
       }
       for (int i = 0; i < amount; i++){
       
@@ -189,42 +189,6 @@ public class Database{
       
       }      
        
-   
-   }
-   
-   public void searchDebt(){
-   
-      ArrayList<Member> debt = new ArrayList<Member>();
-   
-      for (int i = 0; i < data.size(); i++){
-      
-         if (data.get(i) instanceof Member){
-            if (((Member) data.get(i)).getDebt() > 0){
-            
-               debt.add((Member)data.get(i));
-            
-            }
-         }
-      
-         Collections.sort(debt, 
-            new Comparator<Member>() {
-               public int compare(Member p1, Member p2) {
-                  double dif = p1.getDebt() - p2.getDebt();
-                  if (dif > 0) 
-                     return -1;
-                  if (dif < 0) 
-                     return 1;
-                  return 0; 
-               }
-            });
-      
-      }
-      
-      for (int i = 0; i < debt.size(); i++){
-      
-         System.out.println(debt.get(i).toList());
-      
-      }  
    
    }
    
