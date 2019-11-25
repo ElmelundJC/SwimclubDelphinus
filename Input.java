@@ -22,12 +22,14 @@ public class Input{
 
    
    public void initiateUsers(){
-      Users.add("kurt");
+      Users.add("Kurt");
       Password.add("1234");
       Function.add("Trainer");
-      Users.add("john");
+      
+      Users.add("John");
       Password.add("1234");
       Function.add("Treasurer");
+      
       Users.add("Preben");
       Password.add("1234");
       Function.add("Chairman");

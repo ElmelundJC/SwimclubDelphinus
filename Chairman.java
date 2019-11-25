@@ -28,9 +28,7 @@ public class Chairman implements UI {
          
             case"3":
                System.out.println("See members");
-               data.printer(data.getArrayList());
-               
-               //data.searchTimes(5);
+               caseThree();
                break;
          
             case"4":
@@ -39,8 +37,7 @@ public class Chairman implements UI {
                // printer databasen
                // input id
                
-               // caseFour()
-               
+               caseFour();
                break;
                           
                
@@ -67,14 +64,14 @@ public class Chairman implements UI {
          switch(scan.next()){
          
             case "1":
-               System.out.println("Add a pro:\nString name, int age, boolean active, double debt, double time, String discipline, String coach");
+               System.out.println("Add a pro:\nType: Name, Age, Active(true/false), Debt, Time, Discipline, Coach-name");
                data.addPro(data.checkerString(), data.checkerInt(), r.nextInt(1000)+1, data.checkerBoolean(), data.checkerDouble(), data.checkerDouble(), data.checkerString(), data.checkerString());
                System.out.println("Memeber Added");
                run();
                break;
          
             case "2":
-               System.out.println("Add an Amateur:\nString name, int age, boolean active, double debt");
+               System.out.println("Add an Amateur:\nType: Name, Age, Active(true/false), debt");
                data.addAmateur(data.checkerString(), data.checkerInt(), r.nextInt(1000)+1, data.checkerBoolean(), data.checkerDouble());
                run();
                break;
@@ -100,9 +97,84 @@ public class Chairman implements UI {
       data.removeData(data.checkerInt());
    }
    
-   public void caseThree(){}
-   public void caseFour(){}
-   public void caseFive(){}
+   public void caseThree(){
+   data.printer(data.getArrayList());
+   }
+   public void caseFour(){ // edit member
+      // add edit member function
+      // printer databasen
+      // input id
       
-   public void caseTwoOne(){}
+      data.printer(data.getArrayList());
+      System.out.println("");
+      
+      // Vælg ved id hvilket medlem der skal rettes
+      System.out.println("Please enter an ID to edit");
+      int input = data.checkerInt();
+   
+      for (int i = 0; i < data.getArrayList().size(); i++){
+         if (((Member)data.getArrayList().get(i)).getId() == input){
+      
+         System.out.println("1. Edit name\n2. Edit age\n3. Edit ID\n4. Edit Activity \n5. Return to previous menu");
+         while (true) {
+            switch(scan.next()){
+               case "1":
+                  System.out.println("Enter new name");
+                  ((Member) data.getArrayList().get(i)).setName(data.checkerString());
+                  System.out.println("New Name: " + ((Member) data.getArrayList().get(i)).getName());
+                  System.out.println("");
+                  System.out.println("Name editted succesfully");
+                  System.out.println("");
+                  System.out.println("1. Edit name\n2. Edit age\n3. Edit ID\n4. Edit Activity \n5. Return to previous menu");
+                  break;
+            
+               case "2":
+                  System.out.println("Enter new age");
+                  ((Member) data.getArrayList().get(i)).setAge(data.checkerInt());
+                  System.out.println("New age: " + ((Member) data.getArrayList().get(i)).getAge());
+                  System.out.println("");
+                  System.out.println("Age editted succesfully");
+                  System.out.println("");
+                  System.out.println("1. Edit name\n2. Edit age\n3. Edit ID\n4. Edit Activity \n5. Return to previous menu");
+                  break;
+               
+               case "3":
+                  System.out.println("Enter new ID");
+                  ((Member) data.getArrayList().get(i)).setId(data.checkerInt());
+                  System.out.println("New ID: " + ((Member) data.getArrayList().get(i)).getId());
+                  System.out.println("");
+                  System.out.println("ID editted succesfully");
+                  System.out.println("");
+                  System.out.println("1. Edit name\n2. Edit age\n3. Edit ID\n4. Edit Activity \n5. Return to previous menu");
+                  break;
+               
+               case "4":
+                  System.out.println("Enter activity (true/false)");
+                  ((Member) data.getArrayList().get(i)).setActive(data.checkerBoolean());
+                  System.out.println("New ID: " + ((Member) data.getArrayList().get(i)).getActive());
+                  System.out.println("");
+                  System.out.println("Activity editted succesfully");
+                  System.out.println("");
+                  System.out.println("1. Edit name\n2. Edit age\n3. Edit ID\n4. Edit Activity \n5. Return to previous menu");
+                  break;
+            
+               case "5":
+                  run();
+               
+               default:
+                  System.out.println("Enter correct input");
+                  caseFour();
+                  break;
+               
+         
+            }
+      
+         }
+      
+   
+         }
+   
+   }
+   }
+      
 }

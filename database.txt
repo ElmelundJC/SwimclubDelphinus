@@ -1,4 +1,5 @@
 class Amateur Kristian 23 337 true 76.0
 class Pro Marge 28 393 true 0.0 94.2 butterfly Klaus
-class Pro Bart 28 39 true 0.0 60.92 butterfly Klaus
+class Pro Bart 28 39 true 0.0 45.5 butterfly Klaus
 class Pro Meg 28 943 true 0.0 1.1 butterfly Klaus
+class Amateur Niels 44 307 false 600.0

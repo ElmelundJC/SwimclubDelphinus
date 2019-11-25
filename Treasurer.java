@@ -70,7 +70,7 @@ public class Treasurer implements UI {
       System.out.println("Please enter an ID to edit");
    
       int input = data.checkerInt();
-   // 
+   
       for (int i = 0; i < data.getArrayList().size(); i++){
          if (((Member)data.getArrayList().get(i)).getId() == input){
             System.out.println("Set new Debt");

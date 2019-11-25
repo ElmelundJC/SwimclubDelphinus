@@ -10,6 +10,36 @@ abstract class Member{
    //gittest
 
 
+   // Setter metoder:
+   
+   public void setName(String name){
+      this.name = name;
+   }
+   
+   public void setAge(int age){
+      this.age = age;
+   }
+   
+   public void setId(int id){
+      this.id = id;
+   }
+   
+   public void setActive(boolean active){
+      this.active = active;
+   }
+   
+   // Getter Metoder
+   public String getName(){
+      return name;
+   }
+   
+   public int getAge(){
+      return age;
+   }
+   
+   public boolean getActive(){
+      return active;
+   }
 
    public Member(String name, int age, int id, boolean active, double debt){ // fjern id og opret id-funktion
       this.name = name;
