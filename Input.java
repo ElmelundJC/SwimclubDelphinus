@@ -11,48 +11,7 @@ public class Input implements User{
    data.reader();
    }
 
-   public void run(){
-      
-      while (true){
-         System.out.println("Welcome!\n Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
-      
-         switch(sc.next()){
-            case "1":
-               System.out.println("Create user");
-               caseOne();
-               break;
-         
-            case"2":
-               System.out.println("Delete user");
-               caseTwo();
-               break;
-         
-            case"3":
-               System.out.println("See members");
-               //data.printer(data.getArrayList());
-               
-               data.searchTimes("butterfly", 5);
-               break;
-         
-            case"4":
-               System.out.println("Edit members");
-               break;
-         
-            case"5":
-               System.out.println("Exit");
-               data.write(data.getArrayList());
-               System.exit(0);
-               break;
-         
-            default:
-               System.out.println("Please enter number");
-               run();
-               break;
-         
-         }
-      }
    
-   }
    
    public void caseOne(){ //adds member
    System.out.println("1 - Add Pro\n2 - Add Amateur\n3 - Return");
