@@ -12,14 +12,11 @@ public class Main  {
    //   Chairman.run();
    //}
    
-   //Input inp = new Input();
+   Input inp = new Input();
    
-   //inp.run();
+   inp.run();
    
    
-   Treasurer cash = new Treasurer();
-   
-   cash.run();
   
    }
 }
