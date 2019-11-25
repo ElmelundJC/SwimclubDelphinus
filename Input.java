@@ -1,102 +1,76 @@
 import java.util.*;
 
 
-public class Input implements User{
+public class Input{
 
    Database data = new Database();
 
    Scanner sc = new Scanner(System.in);
    
+   ArrayList<String>Users= new ArrayList <String>();
+   ArrayList<String>Password= new ArrayList <String>();
+   ArrayList<String>Function= new ArrayList <String>();
+   
+   
+   
+   
    public Input(){
-   data.reader();
+      data.reader();
    }
 
-   public void run(){
       
-      while (true){
-         System.out.println("Welcome!\n Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
-      
-         switch(sc.next()){
-            case "1":
-               System.out.println("Create user");
-               caseOne();
-               break;
-         
-            case"2":
-               System.out.println("Delete user");
-               caseTwo();
-               break;
-         
-            case"3":
-               System.out.println("See members");
-               //data.printer(data.getArrayList());
+
+   
+   public void initiateUsers(){
+      Users.add("kurt");
+      Password.add("1234");
+      Function.add("Trainer");
+      Users.add("john");
+      Password.add("1234");
+      Function.add("Treasurer");
+      Users.add("Preben");
+      Password.add("1234");
+      Function.add("chairman");
+
+   
+   }
+   
+   public void login(){
+      initiateUsers();
+      while(true){
+         System.out.println("Please enter credentials");
+         String credentials = sc.next();
+         System.out.println("Please enter password");
+         String password = sc.next();
+         for (int i =0; i < Users.size(); i++){
+            if (Users.get(i).equals(credentials)&&Password.get(i).equals(password)){
+               System.out.println("succes");
+               switch (Function.get(i)){ 
+                  case ("Chairman"):
+                     Chairman chairman = new Chairman();
+                     chairman.run();
+                  case ("Treasurer"):
+                     Treasurer treasurer = new Treasurer();
+                     treasurer.run();
+                  case ("Trainer"):
+                     Trainer trainer = new Trainer();
+                     trainer.run();
+                  default:
+                     System.out.println("login failed");
+                     login();
                
-
-
-               data.searchTimes(5);
-               //data.searchDebt();
-
-               break;
+               }
+            }
          
-            case"4":
-               System.out.println("Edit members");
-               break;
-         
-            case"5":
-               System.out.println("Exit");
-               data.write(data.getArrayList());
-               System.exit(0);
-               break;
-         
-            default:
-               System.out.println("Please enter number");
-               run();
-               break;
          
          }
-      }
-   
-   }
-   
-   public void caseOne(){ //adds member
-   System.out.println("1 - Add Pro\n2 - Add Amateur\n3 - Return");
-   Random r = new Random();
-      while (true) {
-         switch(sc.next()){
-         
-            case "1":
-               System.out.println("Add a pro:\nString name, int age, boolean active, double debt, double time, String discipline, String coach");
-               data.addPro(data.checkerString(), data.checkerInt(), r.nextInt(1000)+1, data.checkerBoolean(), data.checkerDouble(), data.checkerDouble(), data.checkerString(), data.checkerString());
-               System.out.println("Memeber Added");
-               run();
-               break;
-         
-            case "2":
-               System.out.println("Add an Amateur:\nString name, int age, boolean active, double debt");
-               data.addAmateur(data.checkerString(), data.checkerInt(), r.nextInt(1000)+1, data.checkerBoolean(), data.checkerDouble());
-               run();
-               break;
-         
-            case "3":
-            
-               run();
-               break;
-         
-            default:
-               System.out.println("Enter correct input");
-               caseOne();
-               break;
-         }
-      
+         System.out.println("please try again");
       }
    
    
    }
    
    
-   public void caseTwo(){}
-   public void caseThree(){}
-   public void caseFour(){}
 
 
 }
