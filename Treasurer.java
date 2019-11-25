@@ -5,40 +5,41 @@ public class Treasurer implements User {
    
     Database data = new Database();
     
-    Input input = new Input();
     
     Scanner scan = new Scanner(System.in);
     
-    public void user() {
+    public Treasurer() {
     data.reader();
     }
    
      public void run() {
        while (true){
-         System.out.println("\nSe medlemmer " + "\nSe restancer" + "\nSlet medlemmer");
+         System.out.println("\n1. Member list " + "\n2. See debt" + "\n3. Edit debt" + "\n4. Erase member" + "\n5. Exit");
       
          switch(scan.next()){
             case "1":
-               System.out.println("See member");
-               data.printer(data.getArrayList());
-               
-               // caseOne();
+               System.out.println("Member list:");
+               caseOne();
                break;
          
             case"2":
                System.out.println("See debt");
-               // caseTwo();
+               caseTwo();
                //brug searchTimes template til at lave en debt search
                break;
          
             case"3":
-               // caseThree();
-               System.out.println("Erase member");
+               System.out.println("Edit debt");
+               caseThree();
                break;
                
-               case "4" :
-               System.out.println("Edit Debt");
-               // caseFour();
+            case "4" :
+               System.out.println("Erase member");
+               caseFour();
+               break;
+               
+            case "5" :
+            System.exit(0);
                break;
          
                     
@@ -51,8 +52,22 @@ public class Treasurer implements User {
       }
    }
    
-   public void caseOne(){}
-   public void caseTwo(){}
-   public void caseThree(){}
-   public void caseFour(){}
+   public void caseOne(){ // Se member list
+      data.printer(data.getArrayList());
+   }
+   
+   public void caseTwo(){ // Se gælden
+      System.out.println("See debt");
+      // her skal der laves en metode for at se gælden for et ID
+   }
+   
+   
+   public void caseThree(){ // rediger gæld
+   // Metode for at finde gæld ud fra ID
+   }
+   
+   
+   public void caseFour(){ // slet medlem
+   // metode for at slette et medlem
+   }
 }

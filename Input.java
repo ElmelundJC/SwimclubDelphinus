@@ -17,23 +17,23 @@ public class Input implements User{
          System.out.println("Welcome!\n Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
       
          switch(sc.next()){
+         // CaseOne
             case "1":
                System.out.println("Create user");
                caseOne();
                break;
-         
+         // CaseTwo
             case"2":
                System.out.println("Delete user");
                caseTwo();
                break;
-         
+         // CaseThree
             case"3":
                System.out.println("See members");
-               //data.printer(data.getArrayList());
-               
-               data.searchTimes("butterfly", 5);
+               data.printer(data.getArrayList());
+               //data.searchTimes("butterfly", 5); // Ændrer disiplin så til en åben variabel.
                break;
-         
+         // CaseFour
             case"4":
                System.out.println("Edit members");
                break;
@@ -63,7 +63,7 @@ public class Input implements User{
             case "1":
                System.out.println("Add a pro:\nString name, int age, boolean active, double debt, double time, String discipline, String coach");
                data.addPro(data.checkerString(), data.checkerInt(), r.nextInt(1000)+1, data.checkerBoolean(), data.checkerDouble(), data.checkerDouble(), data.checkerString(), data.checkerString());
-               System.out.println("Memeber Added");
+               System.out.println("Member Added");
                run();
                break;
          
