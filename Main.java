@@ -12,10 +12,14 @@ public class Main  {
    //   Chairman.run();
    //}
    
-   Input inp = new Input();
+   /*Input inp = new Input();
+   inp.run();*/
+
    
-   inp.run();
+   Chairman cha = new Chairman();
+   cha.run();
    
+      
    
    }
 }

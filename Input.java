@@ -14,7 +14,7 @@ public class Input implements User{
    public void run(){
       
       while (true){
-         System.out.println("Welcome!\n Press 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
+         System.out.println("Welcome!\nPress 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 to exit");
       
          switch(sc.next()){
             case "1":
@@ -43,7 +43,7 @@ public class Input implements User{
                data.write(data.getArrayList());
                System.exit(0);
                break;
-         
+             
             default:
                System.out.println("Please enter number");
                run();
@@ -88,7 +88,7 @@ public class Input implements User{
    
    
    }
-   
+-   
    
    public void caseTwo(){}
    public void caseThree(){}
