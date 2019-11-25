@@ -30,7 +30,7 @@ public class Input{
       Function.add("Treasurer");
       Users.add("Preben");
       Password.add("1234");
-      Function.add("chairman");
+      Function.add("Chairman");
 
    
    }
@@ -68,9 +68,7 @@ public class Input{
       }
    
    
-   }
--   
-   
+   } 
 
 
 }

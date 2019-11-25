@@ -50,6 +50,14 @@ abstract class Member{
    
       return debt;
    }
+   
+   public void setDebt(double value){
+   
+   this.debt = value;
+   
+   
+   
+   }
 
 //Skriv toString Metode!
    public String toString(){

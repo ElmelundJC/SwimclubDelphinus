@@ -13,7 +13,7 @@ public class Chairman implements User {
    
    public void run() {
       while (true){
-         System.out.println("Welcome!\nPress 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members\nPress 5 Search function\nPress 6 to exit");
+         System.out.println("Welcome!\nPress 1 to create user\nPress 2 to delete user\nPress 3 to see members\nPress 4 to edit members \nPress 5 to exit");
       
          switch(scan.next()){
             case "1":
@@ -30,20 +30,17 @@ public class Chairman implements User {
                System.out.println("See members");
                data.printer(data.getArrayList());
                
-               data.searchTimes("butterfly", 5);
+               //data.searchTimes(5);
                break;
          
             case"4":
                System.out.println("Edit members");
+               // add edit member function
                
                break;
-            
-            case"5":
-                System.out.println("Search Functions");
-                caseFive(); 
-                break;                
+                          
                
-            case"6":
+            case"5":
                System.out.println("Exit");
                data.write(data.getArrayList());
                System.exit(0);
@@ -94,13 +91,9 @@ public class Chairman implements User {
    }
 
    public void caseTwo(){ // delete member
-       switch(scan.next()) {
-           case"1":
-           System.out.println("Enter member to delete");
-           caseTwoOne(); // Delete member
-           case"2":
-           System.out.println("3 to exit");
-   }
+   data.printer(data.getArrayList());
+   System.out.println("Choose Member ID to delete");
+      data.removeData(data.checkerInt());
    }
    
    public void caseThree(){}

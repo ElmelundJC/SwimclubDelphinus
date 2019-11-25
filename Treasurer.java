@@ -3,17 +3,17 @@ import java.io.*;
 
 public class Treasurer implements User {
    
-    Database data = new Database();
+   Database data = new Database();
     
     
-    Scanner scan = new Scanner(System.in);
+   Scanner scan = new Scanner(System.in);
     
-    public Treasurer() {
-    data.reader();
-    }
+   public Treasurer() {
+      data.reader();
+   }
    
-     public void run() {
-       while (true){
+   public void run() {
+      while (true){
          System.out.println("\n1. Member list " + "\n2. See debt" + "\n3. Edit debt" + "\n4. Erase member" + "\n5. Exit");
       
          switch(scan.next()){
@@ -39,7 +39,8 @@ public class Treasurer implements User {
                break;
                
             case "5" :
-            System.exit(0);
+               data.write(data.getArrayList());
+               System.exit(0);
                break;
          
                     
@@ -57,17 +58,33 @@ public class Treasurer implements User {
    }
    
    public void caseTwo(){ // Se gælden
-      System.out.println("See debt");
+      data.searchDebt();
       // her skal der laves en metode for at se gælden for et ID
    }
    
    
    public void caseThree(){ // rediger gæld
    // Metode for at finde gæld ud fra ID
+      data.searchDebt();
+   
+      System.out.println("Please enter an ID to edit");
+   
+      int input = data.checkerInt();
+   // 
+      for (int i = 0; i < data.getArrayList().size(); i++){
+         if (((Member)data.getArrayList().get(i)).getId() == input){
+            System.out.println("Set new Debt");
+            ((Member) data.getArrayList().get(i)).setDebt(data.checkerDouble());
+            System.out.println("New debt: " + ((Member) data.getArrayList().get(i)).getDebt());
+         }
+      }
    }
    
    
-   public void caseFour(){ // slet medlem
-   // metode for at slette et medlem
+   public void caseFour(){
+      data.searchDebt();
+      System.out.println("Choose Member ID to delete");
+      data.removeData(data.checkerInt());
    }
+
 }

@@ -31,12 +31,20 @@ public class Database{
    
    
    void removeData(int id){
+   boolean deleted = false;
       for (int i = 0; i < data.size(); i++){
          if (data.get(i) instanceof Member){
             if (((Member) (data.get(i))).getId() == id){
                data.remove(i);
+               deleted = true;
             }
          }
+      }
+      if(deleted == true){
+      System.out.println("Succesfully deleted Member");
+      } else {
+      System.out.println("No such ID/Member");
+      
       }
          
    }
@@ -191,10 +199,12 @@ public class Database{
          disc = discipline[j];
       
          ArrayList<Pro> times = new ArrayList<Pro>();
+         
       
          for (int i = 0; i < data.size(); i++){
          
             if (data.get(i) instanceof Pro){
+            
                if (((Pro) data.get(i)).getDiscipline().equals(disc)){
                
                   times.add((Pro) data.get(i));

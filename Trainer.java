@@ -2,23 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Trainer implements User {
-
-   String team;
-
-
-   double getTime(){
-   
-      return 0;
-   }
-
-   void setTime(){
-   }
-
-   String swimList(){
-   
-   
-      return "test";
-   }
    
    
    Database data = new Database();
@@ -27,13 +10,13 @@ public class Trainer implements User {
     
    Scanner scan = new Scanner(System.in);
     
-   public void user() {
+   public Trainer() {
       data.reader();
    }
    
    public void run() {
       while (true){
-         System.out.println("\nSee best times " + "\nList of Pro members" + "\nEdit times");
+         System.out.println("\n1. See best times " + "\n2. List of Pro members" + "\n3. Edit times\n4. Exit");
       
          switch(scan.next()){
             case "1":
@@ -50,6 +33,12 @@ public class Trainer implements User {
                System.out.println("Edit times");
                caseThree();
                break;
+               
+               case "4":
+               System.out.println("Exit");
+               data.write(data.getArrayList());
+               System.exit(0);
+               break;
            
                  
             default:
@@ -61,7 +50,8 @@ public class Trainer implements User {
       }
    }
    public void caseOne(){
-   } //metode til at se de 5 bedste tider
+   data.searchTimes(5);
+   } 
    
    public void caseTwo(){
    } // metode til at se "pro-medlemmer"

@@ -14,7 +14,7 @@ public class Main  {
    
    Input inp = new Input();
    
-   inp.run();
+   inp.login();
    
    
   
