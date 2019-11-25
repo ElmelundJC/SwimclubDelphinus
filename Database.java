@@ -8,7 +8,6 @@ public class Database{
    String[] discipline = {"butterfly", "crawl", "freestyle", "medley", "backstroke"};
    
    ArrayList getArrayList(){
-      
       return data;
    }
    
