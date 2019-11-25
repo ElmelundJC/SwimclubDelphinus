@@ -31,7 +31,7 @@ public class Database{
    
    
    void removeData(int id){
-   boolean deleted = false;
+      boolean deleted = false;
       for (int i = 0; i < data.size(); i++){
          if (data.get(i) instanceof Member){
             if (((Member) (data.get(i))).getId() == id){
@@ -41,9 +41,9 @@ public class Database{
          }
       }
       if(deleted == true){
-      System.out.println("Succesfully deleted Member");
+         System.out.println("Succesfully deleted Member");
       } else {
-      System.out.println("No such ID/Member");
+         System.out.println("No such ID/Member");
       
       }
          
@@ -65,9 +65,20 @@ public class Database{
    
    public void printer(ArrayList list) {
       for (Object i : list) {
-         System.out.println(((Member) i).toList()); //evt instanceoff
+         System.out.println(((Member) i).toList()); //evt instanceof
                 
       }
+   }
+   
+   public void proPrinter(ArrayList list) {
+   
+      for (Object i : list) {
+         if (i instanceof Pro){
+            System.out.println(((Pro) i).toList()); //evt instanceof
+         }
+      }
+   
+   
    }
    
    public void reader() {
@@ -190,11 +201,11 @@ public class Database{
       
       if (j > discipline.length){
          System.out.println("Value not correct, Try Again!");
-
+      
          searchTimes(amount);
       
       } else {
-
+      
       
          disc = discipline[j];
       

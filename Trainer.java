@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Trainer implements User {
+public class Trainer implements UI {
    
    
    Database data = new Database();
@@ -34,10 +34,9 @@ public class Trainer implements User {
                caseThree();
                break;
                
-               case "4":
+            case "4":
                System.out.println("Exit");
-               data.write(data.getArrayList());
-               System.exit(0);
+               caseFour();
                break;
            
                  
@@ -50,16 +49,40 @@ public class Trainer implements User {
       }
    }
    public void caseOne(){
-   data.searchTimes(5);
+      data.searchTimes(5);
    } 
    
    public void caseTwo(){
+      data.proPrinter(data.getArrayList());
+   
+   
    } // metode til at se "pro-medlemmer"
 
    public void caseThree(){
+   
+      data.proPrinter(data.getArrayList());
+   
+      System.out.println("Please enter an ID to edit");
+   
+      int input = data.checkerInt();
+   // 
+      for (int i = 0; i < data.getArrayList().size(); i++){
+         if (((Member)data.getArrayList().get(i)).getId() == input){
+            System.out.println("Set new time");
+            ((Pro) data.getArrayList().get(i)).setTime(data.checkerDouble());
+            System.out.println("New time: " + ((Pro) data.getArrayList().get(i)).getTime());
+         }
+      }
+   
+   
+   
    }// metode til at sætte/redigerer tider
    
+   
    public void caseFour(){
+   
+      data.write(data.getArrayList());
+      System.exit(0);
    }
  
 }

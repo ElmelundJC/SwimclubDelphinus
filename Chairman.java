@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Chairman implements User {
+public class Chairman implements UI {
 
    Database data = new Database();
    
@@ -36,6 +36,10 @@ public class Chairman implements User {
             case"4":
                System.out.println("Edit members");
                // add edit member function
+               // printer databasen
+               // input id
+               
+               // caseFour()
                
                break;
                           

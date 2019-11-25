@@ -1,6 +1,6 @@
 // interface class
 
-public interface User {
+public interface UI {
    public void run();
    
    public void caseOne();

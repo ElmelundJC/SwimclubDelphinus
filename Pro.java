@@ -26,6 +26,11 @@ public class Pro extends Member {
    return this.discipline;
    }
    
+   public void setTime(double value){
+   this.time = value;
+   
+   }
+   
    public double getTime(){
    return this.time;
    }

@@ -1,9 +1,9 @@
 abstract class Member{
 
-   String name;
-   int age;
-   int id;
-   boolean active;
+   String name; // set name
+   int age; // set age
+   int id; // set id
+   boolean active; // set active
    double price;
    double debt;
    float initialPrice = 1000;

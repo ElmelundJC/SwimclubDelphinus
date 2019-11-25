@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Treasurer implements User {
+public class Treasurer implements UI {
    
    Database data = new Database();
     
