@@ -31,7 +31,8 @@ public class Input implements User{
                System.out.println("See members");
                //data.printer(data.getArrayList());
                
-               data.searchTimes("butterfly", 5);
+               //data.searchTimes("butterfly", 5);
+               data.searchDebt();
                break;
          
             case"4":
