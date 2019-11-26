@@ -7,43 +7,45 @@ public class Treasurer implements UI {
     
     
    Scanner scan = new Scanner(System.in);
-    
+   
+   // read objects into arrayList  
    public Treasurer() {
       data.reader();
    }
    
+   // run method
    public void run() {
       while (true){
          System.out.println("\n1. Member list " + "\n2. See debt" + "\n3. Edit debt" + "\n4. Erase member" + "\n5. Exit");
       
          switch(scan.next()){
+         //see members
             case "1":
                System.out.println("Member list:");
                caseOne();
                break;
-         
+         //sort members by debt
             case"2":
                System.out.println("See debt");
                caseTwo();
-               //brug searchTimes template til at lave en debt search
                break;
-         
+         //edit debt
             case"3":
                System.out.println("Edit debt");
                caseThree();
                break;
-               
+          //delete members     
             case "4" :
                System.out.println("Erase member");
                caseFour();
                break;
-               
+          //exit     
             case "5" :
                data.write(data.getArrayList());
                System.exit(0);
                break;
          
-                    
+          //main menu        
             default:
                System.out.println("Please enter number");
                run();
@@ -52,19 +54,19 @@ public class Treasurer implements UI {
          }
       }
    }
-   
-   public void caseOne(){ // Se member list
+   //see members
+   public void caseOne(){ 
       data.printer(data.getArrayList());
    }
-   
-   public void caseTwo(){ // Se gælden
+   //sort members by debt
+   public void caseTwo(){ 
       data.searchDebt();
-      // her skal der laves en metode for at se gælden for et ID
+     
    }
    
+   //edit debt
+   public void caseThree(){ 
    
-   public void caseThree(){ // rediger gæld
-   // Metode for at finde gæld ud fra ID
       data.searchDebt();
    
       System.out.println("Please enter an ID to edit");
@@ -80,7 +82,7 @@ public class Treasurer implements UI {
       }
    }
    
-   
+   //delete members  
    public void caseFour(){
       data.searchDebt();
       System.out.println("Choose Member ID to delete");

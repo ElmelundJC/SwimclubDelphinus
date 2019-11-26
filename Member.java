@@ -1,46 +1,44 @@
 abstract class Member{
 
-   String name; // set name
-   int age; // set age
-   int id; // set id
-   boolean active; // set active
+   String name; 
+   int age; 
+   int id; 
+   boolean active; 
    double price;
    double debt;
    float initialPrice = 1000;
-   //gittest
 
-
-   // Setter metoder:
-   
+   //setname mehod
    public void setName(String name){
       this.name = name;
    }
-   
+   //setAge method
    public void setAge(int age){
       this.age = age;
    }
-   
+   //setID method
    public void setId(int id){
       this.id = id;
    }
-   
+   //setActive method
    public void setActive(boolean active){
       this.active = active;
    }
    
-   // Getter Metoder
+   //getName method
    public String getName(){
       return name;
    }
-   
+   //getAge method
    public int getAge(){
       return age;
    }
-   
+   //getActive method
    public boolean getActive(){
       return active;
    }
-
+   
+   //constructor
    public Member(String name, int age, int id, boolean active, double debt){ // fjern id og opret id-funktion
       this.name = name;
       this.age = age;
@@ -50,7 +48,8 @@ abstract class Member{
       this.price = calculatePrice();
    
    }
-
+   
+   //calculatePrice method
    double calculatePrice(){
       double standardPrice = 1600;
       if (!this.active){
@@ -70,17 +69,19 @@ abstract class Member{
    
    }
   
-
+   //getID method
    public int getId(){
    
       return id;
    }
    
+   //getDebt method
    public double getDebt(){
    
       return debt;
    }
    
+   //setDebt method
    public void setDebt(double value){
    
    this.debt = value;
@@ -89,11 +90,12 @@ abstract class Member{
    
    }
 
-//Skriv toString Metode!
+   //toString method
    public String toString(){
       return this.getClass() + " " + name + " " + age + " " + id + " " + active + " "  + debt;
    }
    
+   //toList method
    public String toList(){
    
       return "Name: " + name + "\tAge: " + age + "\tID: " + id + "\tActive: " + active + "\tDebt: "  + debt +"\tMemberPrice: " +price +" Dkk";

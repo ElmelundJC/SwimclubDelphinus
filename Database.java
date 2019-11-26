@@ -129,7 +129,7 @@ public class Database{
       Amateur amateur = new Amateur(name, age, id, active, debt); 
       createData(amateur);      
    }
-   //addAmateur method
+   //addPro method
    public void addPro(String name, int age, int id, boolean active, double debt, double time, String discipline, String coach) {
       Pro pro = new Pro(name, age, id, active, debt, time, discipline, coach);
       createData(pro);
