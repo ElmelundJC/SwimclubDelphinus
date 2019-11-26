@@ -51,11 +51,11 @@ public class Input{
                   case ("Chairman"):
                      Chairman chairman = new Chairman();
                      chairman.run();
-               //Initiates Treasurer.run();
+                  //Initiates Treasurer.run();
                   case ("Treasurer"):
                      Treasurer treasurer = new Treasurer();
                      treasurer.run();
-               //Initiates Trainer.run();
+                  //Initiates Trainer.run();
                   case ("Trainer"):
                      Trainer trainer = new Trainer();
                      trainer.run();

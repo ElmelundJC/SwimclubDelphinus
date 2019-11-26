@@ -84,7 +84,7 @@ abstract class Member{
    //setDebt method
    public void setDebt(double value){
    
-   this.debt = value;
+      this.debt = value;
    
    
    
