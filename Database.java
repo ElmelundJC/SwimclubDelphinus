@@ -7,14 +7,18 @@ public class Database{
    
    String[] discipline = {"butterfly", "crawl", "freestyle", "medley", "backstroke"};
    
+   
+   //Return Arraylist data
    ArrayList getArrayList(){
       return data;
    }
    
+   //Add object to arraylist
    void createData(Object obj){
       data.add(obj);
    }
    
+   //Get discipline
    public String getDataDiscipline(){
    
       String temp = "";
@@ -29,7 +33,7 @@ public class Database{
    
    }
    
-   
+   //Removes data object according to ID - instanceof Member
    void removeData(int id){
       boolean deleted = false;
       for (int i = 0; i < data.size(); i++){
@@ -49,6 +53,7 @@ public class Database{
          
    }
    
+   //Prints object via toString and writes to file
    public void write(ArrayList list) {
       try {
          PrintWriter pwriter = new PrintWriter(new FileWriter("database.txt")); // husk at lave try/catch
@@ -63,32 +68,35 @@ public class Database{
       }
    }
    
+   //print method toList
    public void printer(ArrayList list) {
       for (Object i : list) {
-         System.out.println(((Member) i).toList()); //evt instanceof
+         System.out.println(((Member) i).toList()); 
                 
       }
    }
    
+   //pro printmethod toList
    public void proPrinter(ArrayList list) {
    
       for (Object i : list) {
          if (i instanceof Pro){
-            System.out.println(((Pro) i).toList()); //evt instanceof
+            System.out.println(((Pro) i).toList()); 
          }
       }
    
    
    }
    
+   //crates ArrayList from databasefile
    public void reader() {
-      try{   // Skrives paent!!
+      try{   
          Scanner scanner = new Scanner(new FileReader("database.txt"));
          scanner.useLocale(Locale.ENGLISH);
          while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            //System.out.println(line);
             Scanner scan = new Scanner(line);
+            //secure notation 10.0(not 10,0)
             scan.useLocale(Locale.ENGLISH);
             
             while (scan.hasNext()) { 
@@ -116,24 +124,19 @@ public class Database{
       
       }
    }
+   //addAmateur method
    public void addAmateur(String name, int age, int id, boolean active, double debt) {
       Amateur amateur = new Amateur(name, age, id, active, debt); 
       createData(amateur);      
    }
-   
+   //addAmateur method
    public void addPro(String name, int age, int id, boolean active, double debt, double time, String discipline, String coach) {
       Pro pro = new Pro(name, age, id, active, debt, time, discipline, coach);
       createData(pro);
    } 
    
-   public void addAmateur(){
-      Scanner s = new Scanner(System.in);
-      Random r = new Random();
-   
-      System.out.println("Enter first name");
-   
-   }
-   
+  
+   //checks input is a String
    public String checkerString(){
       Scanner sc1 = new Scanner(System.in);
       String temp;
@@ -147,7 +150,7 @@ public class Database{
       return temp;
    }
    
-   
+   //checks input is an Int
    public int checkerInt(){
       Scanner sc1 = new Scanner(System.in);
       int temp;
@@ -161,6 +164,7 @@ public class Database{
       return temp;
    }
    
+   //checks input is a Boolean
    public boolean checkerBoolean(){
       Scanner sc1 = new Scanner(System.in);
       boolean temp;
@@ -173,7 +177,7 @@ public class Database{
    
       return temp;
    }
-   
+   //checks input is a Double
    public double checkerDouble(){
       Scanner sc1 = new Scanner(System.in);
       double temp;
@@ -187,6 +191,7 @@ public class Database{
       return temp;
    }
    
+   //search times method
    public void searchTimes(int amount){
    
       Scanner sc = new Scanner(System.in);
@@ -253,6 +258,7 @@ public class Database{
    
    }
    
+   //seach debt method
    public void searchDebt(){
    
       ArrayList<Member> debt = new ArrayList<Member>();

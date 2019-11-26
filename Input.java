@@ -13,14 +13,14 @@ public class Input{
    
    
    
-   
+   //creates arrayList from data
    public Input(){
       data.reader();
    }
 
       
 
-   
+   //Initiates users -  
    public void initiateUsers(){
       Users.add("Kurt");
       Password.add("1234");
@@ -33,10 +33,9 @@ public class Input{
       Users.add("Preben");
       Password.add("1234");
       Function.add("Chairman");
-
-   
    }
    
+   //Login Method
    public void login(){
       initiateUsers();
       while(true){
@@ -48,12 +47,15 @@ public class Input{
             if (Users.get(i).equals(credentials)&&Password.get(i).equals(password)){
                System.out.println("succes");
                switch (Function.get(i)){ 
+               //Initiates Chairman.run();
                   case ("Chairman"):
                      Chairman chairman = new Chairman();
                      chairman.run();
+               //Initiates Treasurer.run();
                   case ("Treasurer"):
                      Treasurer treasurer = new Treasurer();
                      treasurer.run();
+               //Initiates Trainer.run();
                   case ("Trainer"):
                      Trainer trainer = new Trainer();
                      trainer.run();
